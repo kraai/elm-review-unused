@@ -28,12 +28,13 @@ import NoUnused.Parameters
 import NoUnused.Patterns
 import NoUnused.Variables
 import Review.Rule as Rule exposing (Rule)
-
+import NoLeftPizza
 
 config : List Rule
 config =
     [ Documentation.ReadmeLinksPointToCurrentVersion.rule
     , NoDebug.Log.rule
+    , NoLeftPizza.rule NoLeftPizza.Any
     , NoDebug.TodoOrToString.rule
         |> Rule.ignoreErrorsForDirectories [ "tests/" ]
     , NoExposingEverything.rule
